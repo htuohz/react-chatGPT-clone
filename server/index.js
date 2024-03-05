@@ -13,6 +13,8 @@ const cors = require("cors");
 app.use(bodyParser.json());
 app.use(cors());
 
+app.use(express.static(path.join(__dirname, "../client/build")));
+
 app.post("/chat", async (req, res) => {
   const { message } = req.body;
   try {
@@ -24,6 +26,10 @@ app.post("/chat", async (req, res) => {
   } catch (err) {
     res.json("An error occurred, try again later");
   }
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
 app.listen(port, () => {
