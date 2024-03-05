@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "chatbot",
   "main": "server/index.js",
-  "homepage": "client/build",
   "scripts": {
     "test": "jest",
     "start": "node server/index.js",
