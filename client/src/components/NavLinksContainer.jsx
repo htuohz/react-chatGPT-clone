@@ -119,7 +119,7 @@ const NavLinksContainer = ({ chatLog, setChatLog }) => {
         text="Log out"
         link=""
       />
-      <BuyMeACoffeeButton />
+      {/* <BuyMeACoffeeButton /> */}
     </div>
   );
 };
