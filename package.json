@@ -1,0 +1,26 @@
+{
+  "name": "react-chatgpt-clone",
+  "version": "1.0.0",
+  "description": "chatbot",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server/index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm start\" \"npm run client\"",
+    "build": "npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/htuohz/react-chatGPT-clone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/htuohz/react-chatGPT-clone/issues"
+  },
+  "homepage": "https://github.com/htuohz/react-chatGPT-clone#readme",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
