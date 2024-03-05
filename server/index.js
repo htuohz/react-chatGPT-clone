@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 const OpenAI = require("openai");
 const openai = new OpenAI({ apiKey: process.env.REACT_APP_OPENAI_API_KEY });
@@ -13,7 +13,7 @@ const cors = require("cors");
 app.use(bodyParser.json());
 app.use(cors());
 
-app.post("/", async (req, res) => {
+app.post("/chat", async (req, res) => {
   const { message } = req.body;
   try {
     const completion = await openai.chat.completions.create({
