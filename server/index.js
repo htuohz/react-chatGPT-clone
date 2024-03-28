@@ -5,7 +5,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 const OpenAI = require("openai");
-const openai = new OpenAI({ apiKey: process.env.REACT_APP_OPENAI_API_KEY });
+const openai = new OpenAI({ apiKey: process.env.REACT_APP_OPENAI_API_KEY, timeout: 60000 });
 
 // adding body-parser and cors
 const bodyParser = require("body-parser");
