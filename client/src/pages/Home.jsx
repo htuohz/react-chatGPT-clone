@@ -24,6 +24,7 @@ const Home = () => {
         // Set responseFromAPI to true before making the fetch request
         setReponseFromAPI(true);
         setChatLog([...chatLog, { chatPrompt: inputPrompt }]);
+        
         callAPI();
 
         // hide the keyboard in mobile devices
@@ -31,7 +32,13 @@ const Home = () => {
       }
 
       async function callAPI() {
+        setErr(false);
         try {
+          // const response = await fetch("https://chatbot-tianhao-3ffa3bf6b610.herokuapp.com/chat", {
+          //   method: "POST",
+          //   headers: { "Content-Type": "application/json" },
+          //   body: JSON.stringify({ message: inputPrompt }),
+          // });
           const response = await fetch("/chat", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -45,7 +52,7 @@ const Home = () => {
               botMessage: responseJSON.botResponse,
             },
           ]);
-          setErr(false);
+          
         } catch (err) {
           setErr(err);
           console.log(err);
